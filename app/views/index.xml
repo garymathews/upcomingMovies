@@ -1,0 +1,15 @@
+<Alloy>
+	<Window title="Upcoming Movies">
+		<ListView id="list" backgroundColor="black" defaultItemTemplate="template">
+			<Templates>
+				<ItemTemplate name="template">
+					<View height="Ti.UI.SIZE" onClick="openInfo">
+						<ImageView bindId="background" id="background" />
+						<Label bindId="title" id="title" />
+					</View>
+				</ItemTemplate>
+			</Templates>
+			<ListSection id="section" />
+		</ListView>
+	</Window>
+</Alloy>

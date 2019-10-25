@@ -1,0 +1,15 @@
+<Alloy>
+	<Window layout="vertical" backgroundColor="black">
+		<ImageView id="poster" />
+		<Label id="title" />
+        <View width="60%" top="5" height="Ti.UI.SIZE">
+            <View left="0" class="info">
+                <Label id="rating" />
+            </View>
+            <View right="0" class="info" backgroundColor="#0059b2">
+                <Label id="date" />
+            </View>
+        </View>
+        <Label id="description" />
+	</Window>
+</Alloy>

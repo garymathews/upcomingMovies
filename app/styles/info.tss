@@ -1,0 +1,48 @@
+"#poster": {
+    top: 10,
+	width: "60%"
+}
+
+"#title": {
+	color: "white",
+	font: {
+		fontSize: 22,
+		fontWeight: "bold"
+	}
+}
+
+"#description": {
+    top: 5,
+    left: 20,
+    right: 20,
+	color: "white",
+	font: {
+		fontSize: 12
+	}
+}
+
+".info": {
+    layout: "horizontal",
+    backgroundColor: "gray",
+    borderRadius: 5,
+    width: Ti.UI.SIZE,
+    height: Ti.UI.SIZE
+}
+
+"#rating": {
+    width: 50,
+    color: "white",
+	font: {
+		fontSize: 14
+	},
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}
+
+"#date": {
+    width: 100,
+    color: "white",
+	font: {
+		fontSize: 14
+	},
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+}

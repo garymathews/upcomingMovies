@@ -1,0 +1,14 @@
+"#title": {
+	left: 10,
+	top: 5,
+	color: "white",
+	font: {
+		fontSize: 22,
+		fontWeight: "bold"
+	}
+}
+
+"#background": {
+	left: 0,
+	width: "100%"
+}
