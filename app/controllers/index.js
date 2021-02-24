@@ -14,8 +14,19 @@ async function getMovies() {
 		// Request movie listing from `themoviedb`.
 		const client = Ti.Network.createHTTPClient({
 			onload: e => {
-				movies = JSON.parse(e.source.responseText).results;
-				resolve(movies);
+				const response = JSON.parse(e.source.responseText);
+
+				if (response && response.results) {
+
+					// Order by release date.
+					movies = response.results.sort((a, b) => {
+						return new Date(b.release_date) - new Date(a.release_date);
+					});
+
+					resolve(movies);
+				}
+
+				reject(Error('Unable to parse results.'));
 			},
 			onerror: reject,
 			timeout: 5000
@@ -54,11 +65,11 @@ getMovies().then(results => {
 			background: { image: 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path }
 		});
 	}
-	$.section.setItems(entries);
-	$.list.setSections([ $.section ]);
+	$.section.items = entries;
+	$.list.sections = [ $.section ];
 
 	// Breadcrumb to show we've obtained movie listing.
 	Alloy.Globals.aca.leaveBreadcrumb('loaded_movies', { movies: results.length });
 
 	$.index.open();
-}).catch(console.error);
+}).catch(e => console.error(e));
